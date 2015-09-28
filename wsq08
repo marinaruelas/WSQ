@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int sum(int x, int y){
+  return x+y;
+ }
+int difference(int x, int y){
+  return x-y;
+}
+int product(int x, int y){
+  return x*y;
+}
+int division(int x, int y){
+	return x/y;
+ }
+float remainder(int x, int y){
+  return (x%y);
+ }
+
+int main (){
+  int x;
+  int y;
+  cout << "Give me 1 number: " << endl;
+  cin >> x;
+  cout <<"another one please" << endl;
+  cin >> y;
+    cout << "You gave me : " << x << " and " << y << endl;
+    cout << "The sum of your numbers is: "<< sum(x,y) << endl;
+    cout << "The difference of your numbers is: " << difference(x,y) << endl;
+    cout << "The product of your numbers is: " << product(x,y) << endl;
+    cout <<"The division of your numbers is: " <<  division(x,y) << endl;
+    cout <<"The remainder of your numbers is: " <<  remainder(x,y) << endl;
+
+  return 0;
+}
