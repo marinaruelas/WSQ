@@ -1,0 +1,87 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+float mi_suma (vector <float> l) {
+float sum =0;
+for ( float i =0; i< l.size (); i++ ){
+sum = sum + l[i];
+}
+return sum;
+}
+
+float mi_stddev (vector <float> l2){
+ float sum = mi_suma (l2);
+ float avg = sum / l2.size ();
+ float diffs =0.0;
+ float pows =0.0;
+ for (int i =0; i < l2.size(); i++){
+   pows = (l2 [i] - avg )*(l2 [i] - avg );
+   diffs = diffs + pows;
+ }
+ float casi = diffs / l2.size()-1;
+ float root = pow (casi, .5);
+return root;
+}
+
+int main() {
+vector <float> l (10);
+vector <float> l2 (10);
+float a;
+float b;
+float c;
+float d;
+float e;
+float f;
+float g;
+float h;
+float i;
+float j;
+cout << "Please give me a number." <<endl;
+cin>> a;
+cout << "Another one please" << endl;
+cin>> b;
+cout << "Another one please" << endl;
+cin>> c;
+cout << "Another one please" << endl;
+cin>> d;
+cout << "Another one please" << endl;
+cin>> e;
+cout << "Another one please" << endl;
+cin>> f;
+cout << "Another one please" << endl;
+cin>> g;
+cout << "Another one please" << endl;
+cin>> h;
+cout << "Another one please" << endl;
+cin>> i;
+cout << "Another one please" << endl;
+cin>> j;
+l[0]=a;
+l[1]=b;
+l[2]=c;
+l[3]=d;
+l[4]=e;
+l[5]=f;
+l[6]=g;
+l[7]=h;
+l[8]=i;
+l[9]=j;
+
+l2[0]=a;
+l2[1]=b;
+l2[2]=c;
+l2[3]=d;
+l2[4]=e;
+l2[5]=f;
+l2[6]=g;
+l2[7]=h;
+l2[8]=i;
+l2[9]=j;
+float sum = mi_suma(l);
+cout << "Your total is: " << sum << endl;
+cout << "Your average is: " << sum / l.size() << endl;
+cout << "Your standard deviation is: " << mi_stddev (l) << endl;
+  return 0;
+}
