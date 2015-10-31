@@ -1,13 +1,13 @@
 #include <iostream>
 #include "BigIntegerLibrary.hh"
 using namespace std;
-int up;
-int low;
-int nat=0;
+int upperbound;
+int lowerbound;
+int natural=0;
 int non=0;
 int ly=0;
 BigInteger rev;
-BigInteger num;
+BigInteger number;
 
 BigInteger reverse(BigInteger valid){
 BigInteger invalid= 0;
@@ -20,7 +20,7 @@ while (valid != 0){
 
 void palindrome(BigInteger n, BigInteger r){
   if(n == r){
-nat = nat+1;
+natural = natural +1;
 }
 else {
 int rep= 0;
@@ -43,18 +43,18 @@ else {
 int main (){
 cout << "We are going to see how many Lycherel numbers are." << endl;
  cout <<" Enter the lower bound:";
-cin >> low;
+cin >> lowerbound;
 cout << "Enter the upper bound: ";
-cin >> up;
-num = low;
-while(num <= up){
-rev= reverse(num);
-palindrome(num, rev);
-num = num + 1;
+cin >> upperbound;
+number = lowerbound;
+while(number <= upperbound){
+rev= reverse(number);
+palindrome(number, rev);
+number = number + 1;
 }
 
-cout << "The numbers are between: " << low << " and " << up << endl;
-cout << " Number of natural palindromes : " << nat << endl;
+cout << "The numbers are between: " << lowerbound << " and " << upperbound << endl;
+cout << " Number of natural palindromes : " << natural << endl;
 cout << " Number of non-Lycherel numbers: " << non << endl;
 cout << "Number of Lycherel numbers: " << ly << endl;
 
