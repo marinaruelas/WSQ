@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int greatest (int a, int b){
+  int gcd;
+if (a<=0){
+  cout << "Please positive number greater than cero"<<endl;
+}
+if (b<=0){
+  cout << "Please positive number greater than cero"<<endl;
+}
+  while (b !=0){
+    gcd= b;
+    b=a%b;
+    a=gcd;
+  }
+  return gcd;
+}
+
+int main(){
+int a, b;
+cout << "Enter both numbers you want to evaluate " << endl;
+cin>> a;
+cin >> b;
+cout << "The greatest common divisor is " << greatest (a,b) <<endl;
+
+return 0;
+}
