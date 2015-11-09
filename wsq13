@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+double calculuate_e (double precision ){
+	double errormargin = 0.00001;
+	double s = precision;
+		while ( (s-precision)/s > errormargin) {
+		s = (s+precision /s)/2;
+		cout << "Almost" << s << endl;
+		}
+return s;
+}
+
+int main (){
+double precision ;
+cout << "Give me the number you want to calculate"<< endl;
+cin >> precision;
+cout << "The closest square root is: " << calculuate_e (precision ) << endl; 
+return 0;
+
+}
