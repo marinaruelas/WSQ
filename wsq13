@@ -3,7 +3,7 @@ using namespace std;
 
 double square (int a){
   double b=a;
-     while ((b-a/b)/2> 0.000001){
+     while ((b-a/b)/2> 0.000000001){
          b= (b+a/b)/2;
        }
   return b;
