@@ -1,21 +1,17 @@
 #include <iostream>
 using namespace std;
 
-double calculuate_e (double precision ){
-	double errormargin = 0.00001;
-	double s = precision;
-		while ( (s-precision)/s > errormargin) {
-		s = (s+precision /s)/2;
-		cout << "Almost" << s << endl;
-		}
-return s;
+double square (int a){
+  double b=a;
+     while ((b-a/b)/2> 0.000001){
+         b= (b+a/b)/2;
+       }
+  return b;
 }
-
 int main (){
-double precision ;
-cout << "Give me the number you want to calculate"<< endl;
-cin >> precision;
-cout << "The closest square root is: " << calculuate_e (precision ) << endl; 
-return 0;
-
+  int a;
+  cout << "Enter the number you want to know the square root" <<endl;
+  cin >> a;
+  cout << "The square root is: " << square (a) <<endl;
+  return 0;
 }
