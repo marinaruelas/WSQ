@@ -1,21 +1,35 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
 
-int main()
-{
+int checkBanana(string x){
+string j;
+int B=0;
+int y= 0;
+ifstream f(x);
 
-float euler = 1, k;
-int input;
-
-printf("Enter value ");
-scanf("%d", &input);
-
-for (k = 1; k <= input; k++)
-{
-euler = euler + 1.0/tgamma(k+1);
+if (f.is_open()==1){
+    cout << "File checked!"<<endl;
+    while(getline(f, j));
+f.close();
+for (int i=0;i<j.length();i++){
+    if(isupper(j[i])) j[i]=tolower(j[i]);
 }
-printf("euler number is %f\n", euler);
+while (j.find("banana", y)!=-1){
+    B++;
+    y= j.find("banana",y)+1;
+}
+return B;
+}
 
+else cout << "Sorry, there's an error. ";
 return 0;
+}
+
+int main(){
+string m;
+cout << "Enter the name of a file: ";
+getline(cin, m);
+cout << "The number of bananas in the file was: " << checkBanana(m) << endl;
 }
